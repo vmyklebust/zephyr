@@ -28,6 +28,18 @@
 		clock-frequency = <96000000>;
 		#clock-cells = <0>;
 	};
+
+	soc {
+		gpio0: gpio@40023000 {
+				compatible = "ti,cc27xx-gpio";
+				reg = <0x40023000 0x814>;
+				interrupts = <5 0>;
+				status = "disabled";
+				gpio-controller;
+				#gpio-cells = <2>;
+				ngpios = <33>;
+		};
+	};
 };
 
 &nvic {
