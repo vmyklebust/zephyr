@@ -3,7 +3,7 @@
 
 description: TI SimpleLink CC23x0 Timer
 
-compatible: "ti,cc23x0-systim-timer"
+compatible: "ti,lpf3-systim-timer"
 
 include: base.yaml
 
