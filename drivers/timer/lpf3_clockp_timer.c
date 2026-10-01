@@ -1,14 +1,14 @@
 /*
- * Copyright (c) 2024 Texas Instruments Incorporated
+ * Copyright (c) 2026 Texas Instruments Incorporated
  * Copyright (c) 2024 BayLibre, SAS
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#define DT_DRV_COMPAT ti_cc23x0_systim_timer
+#define DT_DRV_COMPAT ti_lpf3_systim_timer
 
 /*
- * TI SimpleLink CC23X0 timer driver based on the ClockP module from hal_ti
+ * TI SimpleLink LPF3 timer driver based on the ClockP module from hal_ti
  */
 
 #include <soc.h>
