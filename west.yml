@@ -23,6 +23,8 @@ manifest:
       url-base: https://github.com/zephyrproject-rtos
     - name: babblesim
       url-base: https://github.com/BabbleSim
+    - name: personal
+      url-base: https://github.com/vmyklebust
 
   group-filter: [-babblesim, -optional, -testing]
 
@@ -274,7 +276,9 @@ manifest:
       groups:
         - hal
     - name: hal_ti
-      revision: refs/pull/99/head
+      remote: personal
+      repo-path: hal_ti
+      revision: add_cc27xx
       path: modules/hal/ti
       groups:
         - hal
