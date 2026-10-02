@@ -77,6 +77,15 @@
 			compatible = "ti,cc27xx-pinctrl";
 			reg = <0x40003000 0xc1c>;
 		};
+
+		dma: dma@400c4000 {
+			compatible = "ti,lpf3-dma";
+			reg = <0x400c4000 0x524>;
+			interrupts = <8 0>;
+			#dma-cells = <2>;
+			zephyr,pm-device-runtime-auto;
+			status = "disabled";
+		};
 	};
 };
 
