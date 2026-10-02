@@ -72,6 +72,11 @@
 				#gpio-cells = <2>;
 				ngpios = <33>;
 		};
+
+		pinctrl: pinctrl@40003000 {
+			compatible = "ti,cc27xx-pinctrl";
+			reg = <0x40003000 0xc1c>;
+		};
 	};
 };
 
