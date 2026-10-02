@@ -33,6 +33,12 @@
 		#clock-cells = <0>;
 	};
 
+	uartclk: uart-clock {
+		compatible = "fixed-clock";
+		clock-frequency = <48000000>;
+		#clock-cells = <0>;
+	};
+
 	soc {
 		flash_controller: flash-controller@40021000 {
 			compatible = "ti,cc27xx-flash-controller";
@@ -84,6 +90,28 @@
 			interrupts = <8 0>;
 			#dma-cells = <2>;
 			zephyr,pm-device-runtime-auto;
+			status = "disabled";
+		};
+
+		uart0: uart@40034000{
+			compatible = "ti,lpf3-uart";
+			reg = <0x40034000 0x4c>;
+			interrupts = <11 0>;
+			clocks = <&uartclk>;
+			ti,clkctl-id = <0x4>; /* CLKCTL_UART0 */
+			dmas = <&dma 2 6>, <&dma 3 7>;
+			dma-names = "tx", "rx";
+			status = "disabled";
+		};
+
+		uart1: uart@40035000{
+			compatible = "ti,lpf3-uart";
+			reg = <0x40035000 0x4c>;
+			interrupts = <22 0>;
+			clocks = <&uartclk>;
+			ti,clkctl-id = <0x8>; /* CLKCTL_UART1 */
+			dmas = <&dma 1 12>, <&dma 0 13>;
+			dma-names = "tx", "rx";
 			status = "disabled";
 		};
 	};
