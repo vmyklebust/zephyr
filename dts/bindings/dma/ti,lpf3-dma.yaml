@@ -1,9 +1,10 @@
+# Copyright (c) 2025 Texas Instruments Incorporated
 # Copyright (c) 2024 BayLibre, SAS
 # SPDX-License-Identifier: Apache-2.0
 
-description: TI CC23X0 DMA controller
+description: TI LPF3 DMA controller (CC23X0, CC27XX)
 
-compatible: "ti,cc23x0-dma"
+compatible: "ti,lpf3-dma"
 
 include: dma-controller.yaml
 
@@ -26,12 +27,12 @@ properties:
       Example of devicetree DMA channel configuration for the client part:
 
       &uart0 {
-          dmas = <&dma 0 7>, <&dma 1 6>;
-          dma-names = "rx", "tx";
+          dmas = <&dma 2 6>, <&dma 3 7>;
+          dma-names = "tx", "rx";
       };
 
       Above, fragment 0 and 1 represent the different channels used to transfer
-      data between peripheral and RAM. The numbers 7/6 are uart0 rx/tx triggers.
+      data between peripheral and RAM. The numbers 6/7 are uart0 tx/rx triggers.
 
 dma-cells:
   - channel
